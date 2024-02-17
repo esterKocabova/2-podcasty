@@ -1,7 +1,7 @@
 import { createRoot } from 'react-dom/client';
 import { HomePage } from './pages/HomePage';
 import './global.css';
-import  {episodes} from './episodes.js'
+import  {episodes} from './data.js'
 
 const App = () => {
  return(
