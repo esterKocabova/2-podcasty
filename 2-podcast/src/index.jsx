@@ -1,23 +1,25 @@
 import { createRoot } from 'react-dom/client';
 import { HomePage } from './pages/HomePage';
 import './global.css';
+import {Episode} from './components/episode/Episode.jsx'
 import  {episodes} from './data.js'
 
-const App = () => {
+export const App = () => {
  return(
+  <>
   <div className="episodes-list">
-  <div className="">{episodes.map((episode) => (
-      <div key={episode.num} className="episode"> 
-      <div className="episode__num">{episode.num}</div>
-      <div className="episode__body">
-          <div className="episode__title">{episode.title}</div>
-          <div className="episode__guest">{episode.guest}</div>
-      </div></div>
-      ))}
+    {episodes.map((episode) => 
+    (<Episode className="episode"
+      key={episode.num} 
+      num={episode.num} 
+      title={episode.title} 
+      guest={episode.guest} >
+    </Episode>))}
   </div>
-  </div>
+  </>
  )
 }
+
 
 createRoot(
   document.querySelector('#app'),
